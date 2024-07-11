@@ -1,0 +1,15 @@
+*.bak
+*.bak.*
+*.o
+
+.idea/
+.DS_Store
+cmake-build-*
+
+build/*
+build_*
+extra/external/*
+!extra/external/CMakeLists.txt
+extra/package/*
+extra/gen/*
+extra/venv/*
