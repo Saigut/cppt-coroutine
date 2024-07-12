@@ -1,28 +1,28 @@
 # Cppt Coroutine
-[中文](extra/docs/README_cn.md)
+[English](extra/docs/README_en.md)
 
-A C++ stackful coroutine scheduler
+一个 C++ 有栈协程调度器
 
-## Introduction
-This project implements a C++ stackful coroutine scheduler with the following main features:
-- Provides a very simple and user-friendly interface, making it easier to use compared to other various C++ schedulers;
-- Implements a high-performance channel feature, simplifying communication between coroutines;
-- Implements an easy-to-use and high-performance np_queue (Notify to polling queue),
-   - Allows handling new data conveniently without busy waiting or complex callback logic;
-   - Facilitates communication between regular threads and coroutines, avoiding various synchronization issues;
-- Includes essential coroutine versions of Mutex and Condition variable;
-- Based on `boost.context`, offering high performance and good platform compatibility;
-- Supports work-stealing for more balanced task load;
-- Supports automatic separation of time-consuming tasks.
+## 简介
+此项目实现了一个 C++ 有栈协程调度器，主要特点如下：
+- 提供了简单易用的接口；
+- 实现了高性能的 channel；
+- 实现了易用的高性能 np_queue（Notify to polling queue），
+  - 不需要忙等待或者繁杂的 callback 逻辑也能方便处理新来的数据；
+  - 方便普通线程与协程之间的通信；
+- 协程版 Mutex、Condition variable；
+- 基于 `boost.context`，性能高，平台兼容性好；
+- 支持 Work-Stealing，任务负载更加均衡；
+- 支持自动分离耗时任务。
 
-## Dependencies
-The dependencies for this project are managed by the `conan` package manager. Please install `conan` first. When configuring the project with cmake, conan will automatically install the dependencies.
+## 依赖
+此项目的依赖库由 `conan` 包管理器进行管理，请先安装 `conan`。在使用 cmake 配置项目的时候会自动使用 conan 安装依赖库。
 
-**Note:**  
-If `conan` is not properly configured for the compiler, the `conan install` command may fail. You can check the relevant configuration in the `conan` configuration file.
+**注意：**  
+如果 `conan` 对编译器的配置不当，`conan install` 命令可能会运行失败。你可以在 `conan` 配置文件中检查相关配置。
 
-Configuration example:  
-In the `[settings]` section of the `~/.conan/profiles/default` file, for gcc 9 with c++11 ABI:
+配置示例：  
+`~/.conan/profiles/default` 文件的 `[settings]` 部分，gcc 9，c++11 ABI：
 ```
 compiler=gcc
 compiler.version=9
@@ -30,7 +30,7 @@ compiler.libcxx=libstdc++11
 ```
 
 ## Build
-Build command example:
+Build 命令示例：
 ```shell
 mkdir build
 cd build
